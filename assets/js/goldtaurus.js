@@ -6,15 +6,15 @@ let currentAccount = null;
 
 // Level data
 const levelData = {
-    V1: { amount: 0.1, name: 'Entry Level', description: 'Build Foundation' },
-    V2: { amount: 0.2, name: 'Growth Level', description: 'Expand Network' },
-    V3: { amount: 0.4, name: 'Builder Level', description: 'Scale Up' },
-    V4: { amount: 0.8, name: 'Leader Level', description: 'Team Building' },
-    V5: { amount: 1.6, name: 'Elite Level', description: 'Premium Rewards' },
-    V6: { amount: 3.2, name: 'Master Level', description: 'High Yield' },
-    V7: { amount: 6.4, name: 'Champion Level', description: 'Max Multiplier' },
-    V8: { amount: 12.8, name: 'Legend Level', description: 'Ultimate Returns' },
-    V9: { amount: 25.6, name: 'Immortal Level', description: 'Infinite Potential' }
+    T1: { amount: 0.1, name: 'Entry Level', description: 'Build Foundation' },
+    T2: { amount: 0.2, name: 'Growth Level', description: 'Expand Network' },
+    T3: { amount: 0.4, name: 'Builder Level', description: 'Scale Up' },
+    T4: { amount: 0.8, name: 'Leader Level', description: 'Team Building' },
+    T5: { amount: 1.6, name: 'Elite Level', description: 'Premium Rewards' },
+    T6: { amount: 3.2, name: 'Master Level', description: 'High Yield' },
+    T7: { amount: 6.4, name: 'Champion Level', description: 'Max Multiplier' },
+    T8: { amount: 12.8, name: 'Legend Level', description: 'Ultimate Returns' },
+    T9: { amount: 25.6, name: 'Immortal Level', description: 'Infinite Potential' }
 };
 
 // Initialize when DOM is loaded
@@ -354,12 +354,11 @@ function showMatrixInfo(level, amount) {
     }
 }
 
-
-
 // Initialize calculator
 function initCalculator() {
     const multiplierSlider = document.getElementById('tokenMultiplier');
     const multiplierValue = document.getElementById('multiplierValue');
+    const levelSelect = document.getElementById('investmentLevel');
     
     if (multiplierSlider && multiplierValue) {
         // Update multiplier display when slider changes
@@ -371,6 +370,31 @@ function initCalculator() {
         // Initialize preset buttons
         updatePresetButtons();
     }
+    
+    // Add event listener for level selection
+    if (levelSelect) {
+        levelSelect.addEventListener('change', () => {
+            if (levelSelect.value) {
+                // Optional: Auto-calculate when level is selected
+                // calculateReturns();
+            }
+        });
+    }
+    
+    // Initialize preset button click handlers
+    initPresetButtons();
+}
+
+// Initialize preset button click handlers
+function initPresetButtons() {
+    const presetBtns = document.querySelectorAll('.preset-btn');
+    presetBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const value = parseInt(btn.textContent.replace('x', ''));
+            setMultiplier(value);
+        });
+    });
 }
 
 // Set multiplier value
@@ -387,11 +411,14 @@ function setMultiplier(value) {
 
 // Update preset button states
 function updatePresetButtons() {
-    const currentValue = parseInt(document.getElementById('tokenMultiplier').value);
+    const multiplierSlider = document.getElementById('tokenMultiplier');
+    if (!multiplierSlider) return;
+    
+    const currentValue = parseInt(multiplierSlider.value);
     const presetBtns = document.querySelectorAll('.preset-btn');
     
     presetBtns.forEach(btn => {
-        const value = parseInt(btn.textContent);
+        const value = parseInt(btn.textContent.replace('x', ''));
         if (value === currentValue) {
             btn.classList.add('active');
         } else {
@@ -406,78 +433,106 @@ function calculateReturns() {
     const multiplierSlider = document.getElementById('tokenMultiplier');
     const resultContainer = document.getElementById('calculatorResult');
     
-    if (!levelSelect.value) {
+    // Validation
+    if (!levelSelect || !levelSelect.value) {
         showNotification('Please select an investment level first!', 'warning');
         return;
     }
     
+    if (!multiplierSlider) {
+        showNotification('Multiplier control not found!', 'error');
+        return;
+    }
+    
+    if (!resultContainer) {
+        showNotification('Result container not found!', 'error');
+        return;
+    }
+    
     const selectedLevel = levelSelect.value;
-    const multiplier = parseInt(multiplierSlider.value);
+    const multiplier = parseInt(multiplierSlider.value) || 1;
     const levelInfo = levelData[selectedLevel];
     
-    if (!levelInfo) return;
+    if (!levelInfo) {
+        showNotification('Invalid level selected!', 'error');
+        return;
+    }
     
     // Calculate rewards
     const investmentAmount = levelInfo.amount;
     const bnbReward = investmentAmount * 0.25;
-            const taurusReward = investmentAmount * 0.25;
-        const taurusValue = taurusReward * multiplier;
-        const totalValue = bnbReward + taurusValue;
+    const taurusReward = investmentAmount * 0.25;
+    const taurusValue = taurusReward * multiplier;
+    const totalValue = bnbReward + taurusValue;
     const roiPercentage = ((totalValue - investmentAmount) / investmentAmount * 100);
     
-    // Display results
-    resultContainer.innerHTML = `
-        <div class="result-content">
-            <h4 style="color: #FFD700; margin-bottom: 20px; text-align: center;">
-                ${selectedLevel} Investment Analysis
-            </h4>
-            
-            <div class="result-item">
-                <span class="result-label">Investment Amount:</span>
-                <span class="result-value">${investmentAmount} BNB</span>
-            </div>
-            
-            <div class="result-item">
-                <span class="result-label">BNB Reward (25%):</span>
-                <span class="result-value">${bnbReward.toFixed(3)} BNB</span>
-            </div>
-            
-            <div class="result-item">
-                <span class="result-label">Tauru Tokens (25%):</span>
-                <span class="result-value">${tauruReward.toFixed(3)} BNB worth</span>
-            </div>
-            
-            <div class="result-item">
-                <span class="result-label">Token Multiplier:</span>
-                <span class="result-value">${multiplier}x</span>
-            </div>
-            
-            <div class="result-item">
-                <span class="result-label">Token Value:</span>
-                                    <span class="result-value">${taurusValue.toFixed(3)} BNB</span>
-            </div>
-            
-            <div class="result-total">
-                <h4>Total Return Value</h4>
-                <div class="total-amount">${totalValue.toFixed(3)} BNB</div>
-                <div style="margin-top: 10px; color: ${roiPercentage > 0 ? '#4CAF50' : '#f44336'}; font-weight: 600;">
-                    ROI: ${roiPercentage > 0 ? '+' : ''}${roiPercentage.toFixed(1)}%
+    // Display results with animation
+    resultContainer.style.opacity = '0';
+    resultContainer.style.transform = 'translateY(20px)';
+    
+    setTimeout(() => {
+        resultContainer.innerHTML = `
+            <div class="result-content">
+                <h4 style="color: #FFD700; margin-bottom: 25px; text-align: center; font-size: 1.5rem;">
+                    ${selectedLevel} Investment Analysis
+                </h4>
+                
+                <div class="result-item">
+                    <span class="result-label">Investment Amount:</span>
+                    <span class="result-value">${investmentAmount} BNB</span>
+                </div>
+                
+                <div class="result-item">
+                    <span class="result-label">BNB Reward (25%):</span>
+                    <span class="result-value">${bnbReward.toFixed(3)} BNB</span>
+                </div>
+                
+                <div class="result-item">
+                    <span class="result-label">Taurus Tokens (25%):</span>
+                    <span class="result-value">${taurusReward.toFixed(3)} BNB worth</span>
+                </div>
+                
+                <div class="result-item">
+                    <span class="result-label">Token Multiplier:</span>
+                    <span class="result-value" style="color: #FFD700; font-weight: 700;">${multiplier}x</span>
+                </div>
+                
+                <div class="result-item">
+                    <span class="result-label">Token Value at ${multiplier}x:</span>
+                    <span class="result-value" style="color: #4CAF50; font-weight: 700;">${taurusValue.toFixed(3)} BNB</span>
+                </div>
+                
+                <hr style="border-color: rgba(255, 215, 0, 0.3); margin: 20px 0;">
+                
+                <div class="result-total">
+                    <h4 style="color: #FFD700; margin-bottom: 10px;">Total Return Value</h4>
+                    <div class="total-amount" style="font-size: 2rem; color: #4CAF50; font-weight: 800;">
+                        ${totalValue.toFixed(3)} BNB
+                    </div>
+                    <div style="margin-top: 15px; color: ${roiPercentage > 0 ? '#4CAF50' : '#f44336'}; font-weight: 700; font-size: 1.2rem;">
+                        ROI: ${roiPercentage > 0 ? '+' : ''}${roiPercentage.toFixed(1)}%
+                    </div>
+                </div>
+                
+                <div style="margin-top: 25px; padding: 20px; background: rgba(255, 215, 0, 0.1); border-radius: 15px; text-align: center; border: 1px solid rgba(255, 215, 0, 0.2);">
+                    <small style="color: #CCCCCC; line-height: 1.5;">
+                        <i class="fas fa-info-circle" style="color: #FFD700; margin-right: 8px;"></i>
+                        Returns are calculated based on the selected token multiplier scenario. 
+                        Actual returns may vary based on market conditions and token performance.
+                    </small>
                 </div>
             </div>
-            
-            <div style="margin-top: 20px; padding: 15px; background: rgba(255, 215, 0, 0.1); border-radius: 10px; text-align: center;">
-                <small style="color: #CCCCCC;">
-                    * Returns are based on token multiplier scenarios. 
-                    Actual returns may vary based on market conditions.
-                </small>
-            </div>
-        </div>
-    `;
+        `;
+        
+        // Animate result in
+        resultContainer.style.transition = 'all 0.5s ease';
+        resultContainer.style.opacity = '1';
+        resultContainer.style.transform = 'translateY(0)';
+        
+    }, 200);
     
-    // Add calculation animation
-    resultContainer.style.animation = 'fadeInUp 0.5s ease';
-    
-    showNotification(`Calculation complete! Potential ROI: ${roiPercentage.toFixed(1)}%`, 'success');
+    // Show success notification
+    showNotification(`Calculation complete! Potential ROI: ${roiPercentage.toFixed(1)}% with ${multiplier}x multiplier`, 'success');
 }
 
 // Select level group
@@ -486,15 +541,15 @@ function selectLevelGroup(group) {
     
     switch(group) {
         case 'starter':
-            levels = ['V1', 'V2', 'V3'];
+            levels = ['T1', 'T2', 'T3'];
             message = 'Starter levels selected! Perfect for beginners to build foundation.';
             break;
         case 'growth':
-            levels = ['V4', 'V5', 'V6'];
+            levels = ['T4', 'T5', 'T6'];
             message = 'Growth levels selected! Most popular choice for serious investors.';
             break;
         case 'elite':
-            levels = ['V7', 'V8', 'V9'];
+            levels = ['T7', 'T8', 'T9'];
             message = 'Elite levels selected! Maximum potential for experienced investors.';
             break;
     }
