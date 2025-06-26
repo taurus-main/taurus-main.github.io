@@ -32,7 +32,8 @@ Taurus DEX is a revolutionary decentralized exchange platform that combines cutt
 
 ## 🚀 Live Demo
 
-🌐 **Website**: [https://taurus-dex.com](https://taurus-dex.com)
+🌐 **DEX平台**: [https://taurus-dex.github.io/](https://taurus-dex.github.io/)  
+🌐 **主站**: [https://taurus-main.github.io/](https://taurus-main.github.io/)
 
 ### 📄 Pages Available
 - **Homepage** - Platform overview and live trading data
@@ -191,10 +192,10 @@ The **GoldTaurus Matrix** is our innovative multi-level reward system that creat
 
 <div align="center">
 
-[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter)](https://twitter.com/taurusdex)
-[![Telegram](https://img.shields.io/badge/Telegram-Join-0088CC?style=for-the-badge&logo=telegram)](https://t.me/taurusdex)
-[![Discord](https://img.shields.io/badge/Discord-Chat-7289DA?style=for-the-badge&logo=discord)](https://discord.gg/taurusdex)
-[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail)](mailto:contact@taurusdex.com)
+[![Twitter](https://img.shields.io/badge/Twitter-Follow-1DA1F2?style=for-the-badge&logo=twitter)](https://x.com/Taurus_DEX)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/taurus-main/taurus-main.github.io)
+[![DEX](https://img.shields.io/badge/DEX-Platform-FFD700?style=for-the-badge&logo=ethereum)](https://taurus-dex.github.io/)
+[![Email](https://img.shields.io/badge/Email-Contact-EA4335?style=for-the-badge&logo=gmail)](mailto:taurusdex@outlook.com)
 
 </div>
 
