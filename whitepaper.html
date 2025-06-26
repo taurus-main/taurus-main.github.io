@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whitepaper - Taurus DEX</title>
+    <link rel="icon" type="image/webp" href="assets/images/taurus_dex_logo.webp">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/whitepaper.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/taurus_dex_logo.webp" alt="Taurus DEX" class="logo">
+                <span>TAURUS DEX</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="goldtaurus.html">GoldTaurus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="roadmap.html">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="whitepaper.html">Whitepaper</a>
+                    </li>
+                </ul>
+                
+                <button class="btn btn-wallet" onclick="connectWallet()">
+                    <i class="fas fa-wallet"></i> Connect Wallet
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">TAURUS DEX</span>
+                        <span class="subtitle">Technical Whitepaper</span>
+                    </h1>
+                    <p class="hero-description">
+                        Explore the technical architecture and future vision of the next-generation AI-powered decentralized trading platform
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#executive-summary" class="btn btn-primary">
+                            <i class="fas fa-file-alt"></i> Read Whitepaper
+                        </a>
+                        <a href="assets/files/taurus-whitepaper.pdf" class="btn btn-outline-light" download>
+                            <i class="fas fa-download"></i> Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Table of Contents -->
+    <section class="toc-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="toc-card">
+                        <h3><i class="fas fa-list"></i> Table of Contents</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <ul class="toc-list">
+                                    <li><a href="#executive-summary">1. Executive Summary</a></li>
+                                    <li><a href="#user-profiles">2. User Profiles & Use Cases</a></li>
+                                    <li><a href="#architecture">3. System Architecture & Design</a></li>
+                                    <li><a href="#ai-strategy">4. AI Strategy Module</a></li>
+                                    <li><a href="#copytrade">5. CopyTrade Module</a></li>
+                                    <li><a href="#tokenomics">6. Tokenomics</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <ul class="toc-list">
+                                    <li><a href="#business-model">7. Business Model & Revenue</a></li>
+                                    <li><a href="#risk-compliance">8. Risk Control & Compliance</a></li>
+                                    <li><a href="#roadmap">9. Development Roadmap</a></li>
+                                    <li><a href="#community">10. Community Growth & Incentives</a></li>
+                                    <li><a href="#contact">11. Contact & Partnership</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="content-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="sidebar-nav">
+                        <div class="sidebar-nav-item active" data-target="executive-summary">
+                            <i class="fas fa-file-alt"></i> Executive Summary
+                        </div>
+                        <div class="sidebar-nav-item" data-target="user-profiles">
+                            <i class="fas fa-users"></i> User Profiles
+                        </div>
+                        <div class="sidebar-nav-item" data-target="architecture">
+                            <i class="fas fa-cogs"></i> Architecture
+                        </div>
+                        <div class="sidebar-nav-item" data-target="ai-strategy">
+                            <i class="fas fa-brain"></i> AI Strategy
+                        </div>
+                        <div class="sidebar-nav-item" data-target="copytrade">
+                            <i class="fas fa-copy"></i> CopyTrade
+                        </div>
+                        <div class="sidebar-nav-item" data-target="tokenomics">
+                            <i class="fas fa-coins"></i> Tokenomics
+                        </div>
+                        <div class="sidebar-nav-item" data-target="business-model">
+                            <i class="fas fa-chart-line"></i> Business Model
+                        </div>
+                        <div class="sidebar-nav-item" data-target="risk-compliance">
+                            <i class="fas fa-shield-alt"></i> Risk & Compliance
+                        </div>
+                        <div class="sidebar-nav-item" data-target="roadmap">
+                            <i class="fas fa-map"></i> Roadmap
+                        </div>
+                        <div class="sidebar-nav-item" data-target="community">
+                            <i class="fas fa-heart"></i> Community
+                        </div>
+                        <div class="sidebar-nav-item" data-target="contact">
+                            <i class="fas fa-envelope"></i> Contact
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-9">
+                    <div class="content-area">
+                        <!-- Executive Summary -->
+                        <div class="content-block active" id="executive-summary">
+                            <h2>1. Executive Summary</h2>
+                            <div class="highlight-box">
+                                <p>Taurus DEX is an <strong>AI-driven, intent-based, cross-chain aggregated</strong> decentralized trading platform designed to create the next generation trading experience: users simply express their goals, such as "I want to buy ETH with 100 USDT," and the system recognizes the intent, aggregates routes, and automatically executes optimal trades.</p>
+                            </div>
+                            <p>Traditional DEXs suffer from complex operations, fragmented chains, and uncontrollable slippage. Taurus solves different trading needs for both Web3 newcomers and experts through <strong>semantic input + aggregated routing + CopyTrade</strong>.</p>
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <i class="fas fa-brain"></i>
+                                    <h4>AI Intent Recognition</h4>
+                                    <p>Natural language understanding of user trading intentions</p>
+                                </div>
+                                <div class="feature-card">
+                                    <i class="fas fa-link"></i>
+                                    <h4>Cross-Chain Aggregation</h4>
+                                    <p>One-stop multi-chain asset trading experience</p>
+                                </div>
+                                <div class="feature-card">
+                                    <i class="fas fa-copy"></i>
+                                    <h4>Smart Copy Trading</h4>
+                                    <p>Replicate professional trader strategies</p>
+                                </div>
+                            </div>
+                            <blockquote>
+                                <i class="fas fa-quote-left"></i>
+                                Our goal is to become the "one-stop intelligent trading brain" for all wallets, DApps, and community portals.
+                            </blockquote>
+                        </div>
+
+                        <!-- User Profiles -->
+                        <div class="content-block" id="user-profiles">
+                            <h2>2. User Profiles & Use Cases</h2>
+                            <div class="user-profiles">
+                                <div class="profile-card">
+                                    <div class="profile-icon">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <h4>Web3 Newcomers</h4>
+                                    <p><strong>Characteristics:</strong> First-time wallet users who don't understand technical details like slippage, bridging, or DEX operations.</p>
+                                    <p><strong>Value:</strong> Natural language token swapping, such as "I want to buy some ETH," where the system automatically parses and executes.</p>
+                                    <p><strong>Scenario:</strong> Users enter wallets searching for tokens, and Taurus intent portal helps complete swaps.</p>
+                                </div>
+                                
+                                <div class="profile-card">
+                                    <div class="profile-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <h4>DeFi Power Users</h4>
+                                    <p><strong>Characteristics:</strong> Frequent swappers and cross-chain users who focus on fees, slippage, and latency.</p>
+                                    <p><strong>Value:</strong> Automatic optimal route recommendations, multi-chain aggregated execution, accelerated arbitrage and limit orders.</p>
+                                    <p><strong>Scenario:</strong> One-click cross-chain transaction scheduling for rapid token entry/exit and arbitrage strategies.</p>
+                                </div>
+                                
+                                <div class="profile-card">
+                                    <div class="profile-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <h4>KOLs/Strategy Builders</h4>
+                                    <p><strong>Characteristics:</strong> Have followers and want to monetize trading logic while generating revenue.</p>
+                                    <p><strong>Value:</strong> Provide CopyTrade following portal, generate referral codes and revenue sharing.</p>
+                                    <p><strong>Scenario:</strong> KOLs publish strategy links, fans click to automatically copy trading behaviors.</p>
+                                </div>
+                                
+                                <div class="profile-card">
+                                    <div class="profile-icon">
+                                        <i class="fas fa-robot"></i>
+                                    </div>
+                                    <h4>Airdrop Hunters/Bot Users</h4>
+                                    <p><strong>Characteristics:</strong> Batch wallet operations, multi-chain arbitrage, focused on execution efficiency and security.</p>
+                                    <p><strong>Value:</strong> Batch intent API, RPC routing optimization, MEV protection channels.</p>
+                                    <p><strong>Scenario:</strong> Bots batch initiate airdrop participation actions, ensuring optimal gas and latency.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="process-flow">
+                                <h4>User Journey Flow</h4>
+                                <div class="flow-steps">
+                                    <div class="step">
+                                        <div class="step-icon">1</div>
+                                        <span>Discover Opportunity</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                    <div class="step">
+                                        <div class="step-icon">2</div>
+                                        <span>Input Intent</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                    <div class="step">
+                                        <div class="step-icon">3</div>
+                                        <span>System Recommends</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                    <div class="step">
+                                        <div class="step-icon">4</div>
+                                        <span>User Confirms</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                    <div class="step">
+                                        <div class="step-icon">5</div>
+                                        <span>Auto Execute</span>
+                                    </div>
+                                    <i class="fas fa-arrow-right"></i>
+                                    <div class="step">
+                                        <div class="step-icon">6</div>
+                                        <span>Trade Feedback</span>
+                                    </div>
+                                </div>
+                                <p class="text-center mt-3">Each user type receives tailored interactions based on their experience level.</p>
+                            </div>
+                        </div>
+
+                        <!-- Architecture -->
+                        <div class="content-block" id="architecture">
+                            <h2>3. System Architecture & Design</h2>
+                            <p>Taurus DEX adopts a modular architecture design, ensuring each core function can be deployed independently while collaborating efficiently. The overall structure is as follows:</p>
+                            
+                            <div class="architecture-layers">
+                                <div class="layer">
+                                    <div class="layer-header">
+                                        <i class="fas fa-brain"></i>
+                                        <h4>Intent Recognition Layer (Intent Engine)</h4>
+                                    </div>
+                                    <p>Parses user input (such as "buy ETH with 100U") and converts it into structured trading objectives.</p>
+                                </div>
+                                
+                                <div class="layer">
+                                    <div class="layer-header">
+                                        <i class="fas fa-route"></i>
+                                        <h4>Routing Aggregation Layer (Routing Aggregator)</h4>
+                                    </div>
+                                    <p>Coordinates multiple DEX aggregators (1inch, Odos, Jupiter, LiFi) to filter optimal routes.</p>
+                                </div>
+                                
+                                <div class="layer">
+                                    <div class="layer-header">
+                                        <i class="fas fa-cogs"></i>
+                                        <h4>Solver Network (Solver Layer)</h4>
+                                    </div>
+                                    <p>Selects on-chain executors (Solvers) to complete final trade calls, ensuring security and verifiability.</p>
+                                </div>
+                                
+                                <div class="layer">
+                                    <div class="layer-header">
+                                        <i class="fas fa-chart-line"></i>
+                                        <h4>Strategy Recommendation Layer (Strategy Layer)</h4>
+                                    </div>
+                                    <p>Provides trading suggestions and strategy combinations based on user profiles and intents.</p>
+                                </div>
+                                
+                                <div class="layer">
+                                    <div class="layer-header">
+                                        <i class="fas fa-sync"></i>
+                                        <h4>Status Feedback Module (UX Layer)</h4>
+                                    </div>
+                                    <p>Returns execution status, routes, cost estimates, and results, supporting on-chain queries.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="security-note">
+                                <i class="fas fa-shield-alt"></i>
+                                <strong>Security Guarantee:</strong> All operations are completed through non-custodial structure, with user assets always remaining in their own wallets. The system is compatible with mainstream wallets (such as MetaMask, TokenPocket, OKX Wallet, etc.) and cross-chain environments (EVM + Solana + zkSync).
+                            </div>
+                        </div>
+
+                        <!-- AI Strategy -->
+                        <div class="content-block" id="ai-strategy">
+                            <h2>4. AI Strategy Module</h2>
+                            <p>The AI Strategy Engine is one of the core modules of Taurus DEX, dedicated to helping users make reasonable token selection and fund allocation even when unfamiliar with market conditions.</p>
+                            
+                            <div class="ai-algorithms">
+                                <h4>Core algorithms include:</h4>
+                                <div class="algorithm-grid">
+                                    <div class="algorithm-card">
+                                        <div class="algorithm-icon">
+                                            <i class="fas fa-fire"></i>
+                                        </div>
+                                        <h5>Hotness Score (HScore)</h5>
+                                        <p>Builds real-time hotspot scoring based on 24-hour DEX volume growth, Twitter discussion volume, and token holder address growth.</p>
+                                    </div>
+                                    
+                                    <div class="algorithm-card">
+                                        <div class="algorithm-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <h5>Risk Rating (RScore)</h5>
+                                        <p>Analyzes liquidity depth, price volatility, and token lock status to distinguish between high and low-risk targets.</p>
+                                    </div>
+                                    
+                                    <div class="algorithm-card">
+                                        <div class="algorithm-icon">
+                                            <i class="fas fa-lightbulb"></i>
+                                        </div>
+                                        <h5>Policy Recommendation Model (PSM)</h5>
+                                        <p>Combines user intent to recommend combinations like "Stable Portfolio (ETH + BTC)" or "High Potential Portfolio (Meme + ETH)".</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="example-box">
+                                <h4><i class="fas fa-lightbulb"></i> Example Scenario</h4>
+                                <div class="example-content">
+                                    <div class="user-input">
+                                        <strong>User Input:</strong> "I want to swap 100 USDT, just don't lose money."
+                                    </div>
+                                    <div class="system-response">
+                                        <strong>System Recommended Portfolio:</strong>
+                                        <ul>
+                                            <li>70 USDT → ETH (Mainstream Stable)</li>
+                                            <li>30 USDT → $WHY (On-chain Hotness + High Potential)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tech-stack">
+                                <p><strong>Tech Stack:</strong> All models are based on LLM fine-tuning + RLHF human feedback mechanisms, with future plans to introduce local inference deployment and user-autonomous model fine-tuning.</p>
+                            </div>
+                        </div>
+
+                        <!-- CopyTrade -->
+                        <div class="content-block" id="copytrade">
+                            <h2>5. CopyTrade Module</h2>
+                            <p>The Taurus CopyTrade system is open to ordinary users, strategy providers (KOLs), and institutional addresses, implementing decentralized "copy trading" functionality through on-chain verifiable trading behaviors.</p>
+                            
+                            <div class="copytrade-features">
+                                <h4>Functional Structure:</h4>
+                                <div class="feature-list">
+                                    <div class="feature-item">
+                                        <i class="fas fa-user-circle"></i>
+                                        <div>
+                                            <h5>Follow Address</h5>
+                                            <p>Copy real-time trading behaviors of any address (such as Smart Money) with proportional control execution (10%~100%).</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <i class="fas fa-star"></i>
+                                        <div>
+                                            <h5>Follow Person (KOL)</h5>
+                                            <p>Platform-verified on-chain strategists who can display returns, follower count, historical trades, and open following permissions.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="feature-item">
+                                        <i class="fas fa-chart-pie"></i>
+                                        <div>
+                                            <h5>Follow Strategy</h5>
+                                            <p>"Strategy combinations" published by Taurus or third parties, such as "Weekend Low Volatility Portfolio" or "Hot Token 3-Day Rotation Strategy".</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="incentive-mechanism">
+                                <h4><i class="fas fa-coins"></i> Incentive Mechanism:</h4>
+                                <ul>
+                                    <li>Strategy publishers receive up to <strong>15% revenue sharing</strong>, settled proportionally by follower execution trades</li>
+                                    <li>System displays monthly/weekly/ROI rankings to increase credibility and exposure</li>
+                                    <li>Supports creating "exclusive strategy groups" where fans join following via referral codes</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="deployment-info">
+                                <p>The CopyTrade module supports EVM multi-chain deployment and will open API access for Bot users and institutional deployment in the future.</p>
+                            </div>
+                        </div>
+
+                        <!-- Tokenomics -->
+                        <div class="content-block" id="tokenomics">
+                            <h2>6. Tokenomics</h2>
+                            <div class="launch-info">
+                                <i class="fas fa-rocket"></i>
+                                <p>Taurus DEX tokens will be <strong>fairly launched</strong> through the four.meme platform, with no private sale, no presale, no institutional allocation, 100% community-oriented launch.</p>
+                            </div>
+                            
+                            <div class="token-utilities">
+                                <h4>Token utilities include:</h4>
+                                <div class="utility-grid">
+                                    <div class="utility-card">
+                                        <i class="fas fa-vote-yea"></i>
+                                        <h5>Governance Voting</h5>
+                                        <p>Decide product direction, fee structure, incentive allocation, and other governance issues</p>
+                                    </div>
+                                    
+                                    <div class="utility-card">
+                                        <i class="fas fa-gift"></i>
+                                        <h5>Incentive Mechanism</h5>
+                                        <p>Swap/copy trading/strategy usage behaviors can all earn airdrop eligibility</p>
+                                    </div>
+                                    
+                                    <div class="utility-card">
+                                        <i class="fas fa-unlock"></i>
+                                        <h5>Usage Scenarios</h5>
+                                        <p>Unlock advanced AI strategies, CopyTrade permissions, offset trading fees, etc.</p>
+                                    </div>
+                                    
+                                    <div class="utility-card">
+                                        <i class="fas fa-link"></i>
+                                        <h5>Ecosystem Access</h5>
+                                        <p>Execution or priority scheduling credentials for collaborations with wallets, Bot tools, and bridging services</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="token-philosophy">
+                                <p>The token model maintains <strong>lightweight, decentralized orientation</strong>, with future burning, staking, and locking mechanisms to be set based on community voting.</p>
+                            </div>
+                        </div>
+
+                        <!-- Business Model -->
+                        <div class="content-block" id="business-model">
+                            <h2>7. Business Model & Revenue Sources</h2>
+                            <p>Taurus DEX's business model is built around three cores: user growth, strategy ecosystem development, and executor incentives.</p>
+                            
+                            <div class="revenue-sources">
+                                <h4><i class="fas fa-dollar-sign"></i> Revenue Sources:</h4>
+                                <div class="revenue-grid">
+                                    <div class="revenue-card">
+                                        <i class="fas fa-handshake"></i>
+                                        <h5>Aggregated Trading Rebates</h5>
+                                        <p>Taurus aggregates trades from protocols like 1inch, Jupiter, LiFi and receives official rebate income</p>
+                                    </div>
+                                    
+                                    <div class="revenue-card">
+                                        <i class="fas fa-percentage"></i>
+                                        <h5>CopyTrade Management Fees</h5>
+                                        <p>KOL copy trading behaviors generate up to 15% revenue sharing, with platform taking partial service fees</p>
+                                    </div>
+                                    
+                                    <div class="revenue-card">
+                                        <i class="fas fa-crown"></i>
+                                        <h5>Advanced Strategy Subscription</h5>
+                                        <p>AI models and strategy combinations use subscription/licensing models for premium users</p>
+                                    </div>
+                                    
+                                    <div class="revenue-card">
+                                        <i class="fas fa-gavel"></i>
+                                        <h5>Solver Execution Slot Bidding</h5>
+                                        <p>Some execution channels will open priority bidding mechanisms for Bot/executor competitive access</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="trust-principle">
+                                <i class="fas fa-shield-alt"></i>
+                                <p><strong>Trust Principle:</strong> Platform does not extract user assets or intervene in settlements. All operations execute transparently on-chain, maximizing trust and cooperation willingness.</p>
+                            </div>
+                        </div>
+
+                        <!-- Risk & Compliance -->
+                        <div class="content-block" id="risk-compliance">
+                            <h2>8. Risk Control & Compliance Mechanisms</h2>
+                            <p>Taurus DEX emphasizes Web3 security compliance standards, designing security mechanisms across frontend, contract, and API layers:</p>
+                            
+                            <div class="security-measures">
+                                <div class="measure-item">
+                                    <i class="fas fa-globe"></i>
+                                    <div>
+                                        <h5>Frontend Restrictions</h5>
+                                        <p>Default restrictions on access from high judicial risk regions like USA, North Korea</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="measure-item">
+                                    <i class="fas fa-code"></i>
+                                    <div>
+                                        <h5>Contract Logic Audits</h5>
+                                        <p>Platform conducts third-party audits of all core contracts with regular reviews to avoid potential vulnerabilities</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="measure-item">
+                                    <i class="fas fa-list-check"></i>
+                                    <div>
+                                        <h5>Executor Whitelist System</h5>
+                                        <p>All Solvers must register and pass verification to access execution modules</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="measure-item">
+                                    <i class="fas fa-shield"></i>
+                                    <div>
+                                        <h5>MEV Protection</h5>
+                                        <p>Default access to Flashbots RPC, MEV Blocker channels to prevent front-running and slippage losses</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="measure-item">
+                                    <i class="fas fa-lock"></i>
+                                    <div>
+                                        <h5>Data Privacy Protection</h5>
+                                        <p>Intent content signature submission, receipt encryption processing to protect user on-chain intent privacy</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="commitment">
+                                <p>Taurus is committed to <strong>long-term trustworthy operation</strong>, ensuring all trade executions are transparent on-chain and user-autonomous.</p>
+                            </div>
+                        </div>
+
+                        <!-- Roadmap -->
+                        <div class="content-block" id="roadmap">
+                            <h2>9. Development Roadmap</h2>
+                            <div class="roadmap-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>Q3 2025</h4>
+                                        <ul>
+                                            <li>Launch MVP version supporting intent input + Swap aggregation routing + basic AI recommendations</li>
+                                            <li>Integrate 1inch, Jupiter, LiFi with cross-chain trading support</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>Q4 2025</h4>
+                                        <ul>
+                                            <li>Launch CopyTrade module supporting KOL strategy copying + revenue sharing system</li>
+                                            <li>Launch Bull Points system with airdrop incentives</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>Q1 2026</h4>
+                                        <ul>
+                                            <li>Open strategy marketplace supporting third-party model/strategy uploads</li>
+                                            <li>Deploy Solver node system to enhance execution capabilities</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="timeline-item">
+                                    <div class="timeline-marker">
+                                        <i class="fas fa-calendar-alt"></i>
+                                    </div>
+                                    <div class="timeline-content">
+                                        <h4>Q2–Q3 2026</h4>
+                                        <ul>
+                                            <li>Launch self-developed lightweight AI model replacing basic GPT interfaces</li>
+                                            <li>Start international ecosystem (supporting English/Japanese/Korean)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Community -->
+                        <div class="content-block" id="community">
+                            <h2>10. Community Growth & Incentive Systems</h2>
+                            <p>Taurus community incentive system is designed around "<strong>Contribution Equals Equity</strong>", aiming to drive protocol growth and ecosystem building through user participation.</p>
+                            
+                            <div class="incentive-systems">
+                                <div class="system-card">
+                                    <div class="system-icon">
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <h4>Points System (Bull Points)</h4>
+                                    <ul>
+                                        <li>Swap operations, copy trading behaviors, strategy publishing, user invitations, check-in tasks all earn "Bull Points"</li>
+                                        <li>Bull Points determine airdrop priority, advanced feature unlocks, and future staking rights weights</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="system-card">
+                                    <div class="system-icon">
+                                        <i class="fas fa-user-plus"></i>
+                                    </div>
+                                    <h4>Referral System</h4>
+                                    <ul>
+                                        <li>Each user can generate exclusive referral codes to invite other users to register, use Taurus products and bind</li>
+                                        <li>Referrers receive partial Bull Points rebates and incentive revenue sharing in CopyTrade earnings</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="system-card">
+                                    <div class="system-icon">
+                                        <i class="fas fa-trophy"></i>
+                                    </div>
+                                    <h4>Leaderboards & Competition Mechanisms</h4>
+                                    <ul>
+                                        <li>System regularly publishes "Monthly Strongest Strategy", "Highest Return Copy Trader", "Most User Invitations" leaderboards</li>
+                                        <li>Top performers receive additional Bull Points, airdrop rewards, or token reward packages</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="system-card">
+                                    <div class="system-icon">
+                                        <i class="fas fa-users-cog"></i>
+                                    </div>
+                                    <h4>Community Co-building Mechanism</h4>
+                                    <ul>
+                                        <li>Support establishing "Taurus DAO sub-communities", each can create subdomains and bind multiple KOLs</li>
+                                        <li>DAOs can apply for operational budgets or governance proposal permissions to jointly participate in platform building</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact -->
+                        <div class="content-block" id="contact">
+                            <h2>11. Contact & Partnership Methods</h2>
+                            <p>We welcome all wallet providers, strategy platforms, Bot teams, content creators, and investors to participate in the Taurus ecosystem.</p>
+                            
+                            <div class="contact-info">
+                                <div class="contact-grid">
+                                    <div class="contact-card">
+                                        <i class="fas fa-globe"></i>
+                                        <h4>Official Website</h4>
+                                        <a href="https://taurus-dex.github.io/" target="_blank">taurus-dex.github.io</a>
+                                    </div>
+                                    
+                                    <div class="contact-card">
+                                        <i class="fab fa-twitter"></i>
+                                        <h4>X (Twitter)</h4>
+                                        <a href="https://twitter.com/jinniu_dex" target="_blank">@jinniu_dex</a>
+                                    </div>
+                                    
+                                    <div class="contact-card">
+                                        <i class="fab fa-telegram"></i>
+                                        <h4>Telegram Community</h4>
+                                        <a href="https://t.me/jinniudex_official" target="_blank">@jinniudex_official</a>
+                                    </div>
+                                    
+                                    <div class="contact-card">
+                                        <i class="fas fa-envelope"></i>
+                                        <h4>Business Partnership Email</h4>
+                                        <a href="mailto:bd@jinniudex.io">bd@jinniudex.io</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="cooperation-methods">
+                                <h4><i class="fas fa-handshake"></i> Partnership methods include:</h4>
+                                <div class="cooperation-list">
+                                    <div class="cooperation-item">
+                                        <i class="fas fa-wallet"></i>
+                                        <span>Wallet integration (SDK / iframe)</span>
+                                    </div>
+                                    <div class="cooperation-item">
+                                        <i class="fas fa-robot"></i>
+                                        <span>Bot tools using API / Solver channels</span>
+                                    </div>
+                                    <div class="cooperation-item">
+                                        <i class="fas fa-edit"></i>
+                                        <span>Content creators binding referral codes + copy trading revenue sharing</span>
+                                    </div>
+                                    <div class="cooperation-item">
+                                        <i class="fas fa-puzzle-piece"></i>
+                                        <span>Strategy platforms embedding CopyTrade plugins</span>
+                                    </div>
+                                    <div class="cooperation-item">
+                                        <i class="fas fa-brain"></i>
+                                        <span>Project collaborations creating "AI intent templates + execution routing"</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="final-cta">
+                                <div class="cta-content">
+                                    <h3>Welcome to Join Taurus</h3>
+                                    <p>Experience the next generation of AI-driven on-chain trading</p>
+                                    <div class="cta-buttons">
+                                        <a href="index.html" class="btn btn-primary">
+                                            <i class="fas fa-rocket"></i> Try Platform
+                                        </a>
+                                        <a href="mailto:bd@jinniudex.io" class="btn btn-outline-light">
+                                            <i class="fas fa-envelope"></i> Business Partnership
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/taurus_dex_logo.webp" alt="Taurus DEX" class="logo">
+                        <span>Taurus DEX</span>
+                    </div>
+                    <p class="footer-description">
+                        The next generation of decentralized trading, powered by blockchain technology and inspired by the cosmos.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="goldtaurus.html">GoldTaurus</a></li>
+                            <li><a href="#swap">Swap</a></li>
+                            <li><a href="#tokens">Tokens</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="whitepaper.html">Whitepaper</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                            <li><a href="features.html">Features</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#vision">Vision</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Telegram">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Taurus DEX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Web3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/whitepaper.js"></script>
+</body>
+</html>
+</rewritten_file>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taurus DEX - AI-Powered Decentralized Exchange</title>
+    <link rel="icon" type="image/webp" href="assets/images/taurus_dex_logo.webp">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <img src="assets/images/taurus_dex_logo.webp" alt="Taurus DEX" class="logo-img">
+                <div class="dex-text">DEX</div>
+            </div>
+            <h1 class="loading-title">TAURUS DEX</h1>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <div class="loading-percentage">0%</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="assets/images/taurus_dex_logo.webp" alt="Taurus DEX" class="logo">
+                <span>TAURUS DEX</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="goldtaurus.html">GoldTaurus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="roadmap.html">Roadmap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="whitepaper.html">Whitepaper</a>
+                    </li>
+                </ul>
+                
+                <button class="btn btn-wallet" onclick="connectWallet()">
+                    <i class="fas fa-wallet"></i> Connect Wallet
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <canvas id="hero-canvas"></canvas>
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">
+                            <span class="gradient-text">TAURUS DEX</span>
+                            <span class="subtitle">AI-Powered Trading Revolution</span>
+                        </h1>
+                        
+                        <p class="hero-description">
+                            Experience the future of decentralized trading with our AI-driven intent engine, 
+                            cross-chain aggregation, and revolutionary GoldTaurus matrix system.
+                        </p>
+                        
+                        <div class="hero-buttons">
+                            <a href="goldtaurus.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-star"></i> Explore GoldTaurus
+                            </a>
+                            <a href="features.html" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-rocket"></i> Learn More
+                            </a>
+                        </div>
+                        
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="1000000">0</div>
+                                <div class="stat-label">Total Volume</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="50000">0</div>
+                                <div class="stat-label">Active Users</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-target="99">0</div>
+                                <div class="stat-label">Uptime %</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="hero-visual">
+                        <div class="floating-card">
+                            <div class="card-header">
+                                <i class="fas fa-chart-line"></i>
+                                <span>AI Trading Engine</span>
+                            </div>
+                            <div class="card-body">
+                                <div class="trading-pair">
+                                    <span>BNB/USDT</span>
+                                    <span class="price-up" id="bnb-price">$--- <i class="fas fa-arrow-up"></i></span>
+                                </div>
+                                <div class="chart-placeholder">
+                                    <canvas id="mini-chart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </section>
+
+    <!-- Platform Preview Section -->
+    <section class="platform-preview-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title">
+                        <span class="gradient-text">Experience Our Platform</span>
+                    </h2>
+                    <p class="section-description">
+                        Explore the power of Taurus DEX through our intuitive interface. 
+                        From advanced trading tools to seamless cross-chain swaps, 
+                        everything you need is at your fingertips.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Main Featured Screenshot -->
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="browser-window main-preview">
+                        <div class="browser-header">
+                            <div class="browser-controls">
+                                <span class="control-btn close"></span>
+                                <span class="control-btn minimize"></span>
+                                <span class="control-btn maximize"></span>
+                            </div>
+                            <div class="browser-url">
+                                <i class="fas fa-lock"></i>
+                                <span>taurus-dex.github.io</span>
+                            </div>
+                            <div class="browser-menu">
+                                <i class="fas fa-ellipsis-h"></i>
+                            </div>
+                        </div>
+                        <div class="browser-content">
+                            <img src="assets/images/dex-1.png" alt="Taurus DEX Main Trading Interface" class="screenshot">
+                            <div class="screenshot-overlay">
+                                <div class="feature-highlight top-left">
+                                    <div class="highlight-dot"></div>
+                                    <div class="highlight-label">AI Intent Engine</div>
+                                </div>
+                                <div class="feature-highlight top-right">
+                                    <div class="highlight-dot"></div>
+                                    <div class="highlight-label">Real-time Analytics</div>
+                                </div>
+                                <div class="feature-highlight bottom-left">
+                                    <div class="highlight-dot"></div>
+                                    <div class="highlight-label">Cross-chain Swaps</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feature Screenshots Grid -->
+            <div class="row g-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="feature-preview-card w-100">
+                        <div class="laptop-mockup">
+                            <div class="laptop-screen">
+                                <img src="assets/images/dex-2.png" alt="Advanced Trading Dashboard" class="screenshot">
+                            </div>
+                            <div class="laptop-base"></div>
+                        </div>
+                        <div class="feature-info">
+                            <h4>Advanced Trading Dashboard</h4>
+                            <p>Professional-grade charts, order books, and trading tools designed for both beginners and experts.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="feature-preview-card w-100">
+                        <div class="laptop-mockup">
+                            <div class="laptop-screen">
+                                <img src="assets/images/dex-3.png" alt="Portfolio Management" class="screenshot">
+                            </div>
+                            <div class="laptop-base"></div>
+                        </div>
+                        <div class="feature-info">
+                            <h4>Portfolio Management</h4>
+                            <p>Track your investments, analyze performance, and manage your crypto portfolio with intelligent insights.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 d-flex">
+                    <div class="feature-preview-card w-100">
+                        <div class="laptop-mockup">
+                            <div class="laptop-screen">
+                                <img src="assets/images/dex-1.png" alt="Main Trading Interface" class="screenshot">
+                            </div>
+                            <div class="laptop-base"></div>
+                        </div>
+                        <div class="feature-info">
+                            <h4>Intuitive Trading Interface</h4>
+                            <p>Clean, modern design with all essential trading tools easily accessible for seamless user experience.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="row mt-5">
+                <div class="col-lg-12 text-center">
+                    <div class="platform-cta">
+                        <h3>Ready to Start Trading?</h3>
+                        <p>Join thousands of traders who trust Taurus DEX for their DeFi needs</p>
+                        <div class="cta-buttons">
+                            <a href="goldtaurus.html" class="btn btn-primary btn-lg">
+                                <i class="fas fa-rocket"></i> Launch Platform
+                            </a>
+                            <a href="features.html" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-info-circle"></i> Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/taurus_dex_logo.webp" alt="Taurus DEX" class="logo">
+                        <span>Taurus DEX</span>
+                    </div>
+                    <p class="footer-description">
+                        The next generation of decentralized trading, powered by blockchain technology and inspired by the cosmos.
+                    </p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Products</h4>
+                        <ul>
+                            <li><a href="goldtaurus.html">GoldTaurus</a></li>
+                            <li><a href="#swap">Swap</a></li>
+                            <li><a href="#tokens">Tokens</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>About</h4>
+                        <ul>
+                            <li><a href="whitepaper.html">Whitepaper</a></li>
+                            <li><a href="roadmap.html">Roadmap</a></li>
+                            <li><a href="features.html">Features</a></li>
+                            <li><a href="#team">Team</a></li>
+                            <li><a href="#vision">Vision</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Telegram">
+                                <i class="fab fa-telegram-plane"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Discord">
+                                <i class="fab fa-discord"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Taurus DEX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Web3.js -->
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html> 
