@@ -32,8 +32,8 @@ Taurus DEX is a revolutionary decentralized exchange platform that combines cutt
 
 ## 🚀 Live Demo
 
-🌐 **DEX平台**: [https://taurus-dex.github.io/](https://taurus-dex.github.io/)  
-🌐 **主站**: [https://taurus-main.github.io/](https://taurus-main.github.io/)
+🌐 **DEX**: [https://taurus-dex.github.io/](https://taurus-dex.github.io/)  
+🌐 **Web**: [https://taurus-main.github.io/](https://taurus-main.github.io/)
 
 ### 📄 Pages Available
 - **Homepage** - Platform overview and live trading data
