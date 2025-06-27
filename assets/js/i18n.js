@@ -1533,6 +1533,7 @@ const I18N = {
             localStorage.setItem('taurus-dex-language', lang);
             this.updatePageContent();
             this.updatePageDirection();
+            this.updateLanguageSelector();
         }
     },
     
@@ -1585,12 +1586,30 @@ const I18N = {
         document.documentElement.dir = 'ltr';
     },
     
+    // 更新语言选择器显示
+    updateLanguageSelector() {
+        const languageText = document.querySelector('.language-text');
+        if (languageText) {
+            languageText.textContent = this.supportedLanguages[this.currentLanguage];
+        }
+        
+        // 更新下拉菜单中的活跃状态
+        document.querySelectorAll('[data-language]').forEach(item => {
+            const itemLang = item.getAttribute('data-language');
+            if (itemLang === this.currentLanguage) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    },
+    
     // 创建语言选择器
     createLanguageSelector() {
-        const navbar = document.querySelector('.navbar .container');
-        if (!navbar) return;
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (!navbarCollapse) return;
         
-        const walletButton = navbar.querySelector('.btn-wallet');
+        const walletButton = navbarCollapse.querySelector('.btn-wallet');
         if (!walletButton) return;
         
         // 创建语言选择器容器
@@ -1627,18 +1646,6 @@ const I18N = {
                 e.preventDefault();
                 const newLanguage = e.target.getAttribute('data-language');
                 this.setLanguage(newLanguage);
-                
-                // 更新下拉菜单显示
-                const languageText = document.querySelector('.language-text');
-                if (languageText) {
-                    languageText.textContent = this.supportedLanguages[newLanguage];
-                }
-                
-                // 更新活跃状态
-                document.querySelectorAll('[data-language]').forEach(item => {
-                    item.classList.remove('active');
-                });
-                e.target.classList.add('active');
                 
                 // 关闭下拉菜单
                 const dropdownElement = document.getElementById('languageDropdown');
