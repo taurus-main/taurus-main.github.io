@@ -160,34 +160,6 @@ The **GoldTaurus Matrix** is our innovative multi-level reward system that creat
 
 ---
 
-## 🗺️ Roadmap
-
-### 🚀 Phase 1: Foundation (Q1 2024)
-- [x] Core DEX functionality
-- [x] GoldTaurus Matrix implementation
-- [x] Cross-chain bridge integration
-- [x] Security audit completion
-
-### 📈 Phase 2: Enhancement (Q2 2024)
-- [x] AI trading algorithms
-- [x] Copy trading features
-- [x] Mobile application
-- [ ] Advanced analytics dashboard
-
-### 🌐 Phase 3: Expansion (Q3 2024)
-- [ ] Additional blockchain networks
-- [ ] Institutional trading tools
-- [ ] API for developers
-- [ ] Governance token launch
-
-### 🎯 Phase 4: Innovation (Q4 2024)
-- [ ] DeFi yield farming
-- [ ] NFT marketplace integration
-- [ ] DAO governance system
-- [ ] Educational platform
-
----
-
 ## 📞 Connect With Us
 
 <div align="center">
