@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roadmap - Taurus DEX</title>
+    <meta name="title-key" content="roadmap.title">
     <link rel="icon" type="image/webp" href="assets/images/taurus_dex_logo.webp">
     
     <!-- Bootstrap CSS -->
@@ -12,6 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="assets/css/roadmap.css" rel="stylesheet">
+    <link href="assets/css/i18n.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -29,24 +31,24 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="features.html" data-i18n="nav.features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="goldtaurus.html">GoldTaurus</a>
+                        <a class="nav-link" href="goldtaurus.html" data-i18n="nav.goldtaurus">GoldTaurus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="roadmap.html">Roadmap</a>
+                        <a class="nav-link active" href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="whitepaper.html">Whitepaper</a>
+                        <a class="nav-link" href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a>
                     </li>
                 </ul>
                 
                 <button class="btn btn-wallet" onclick="connectWallet()">
-                    <i class="fas fa-wallet"></i> Connect Wallet
+                    <i class="fas fa-wallet"></i> <span data-i18n="nav.connect_wallet">Connect Wallet</span>
                 </button>
             </div>
         </div>
@@ -62,9 +64,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-8 mx-auto text-center">
                     <h1 class="hero-title">
-                        <span class="gradient-text">Development Roadmap</span>
+                        <span class="gradient-text" data-i18n="roadmap.hero.title">Development Roadmap</span>
                     </h1>
-                    <p class="hero-description">
+                    <p class="hero-description" data-i18n="roadmap.hero.description">
                         Discover our ambitious journey to revolutionize decentralized trading. 
                         From innovative AI-driven solutions to cross-chain integration, 
                         follow our path to building the future of DeFi.
@@ -77,7 +79,7 @@
     <!-- Timeline Section -->
     <section class="timeline-section">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Development Timeline</h2>
+            <h2 class="section-title text-center mb-5" data-i18n="roadmap.timeline.title">Development Timeline</h2>
             
             <div class="timeline">
                 <!-- Phase 1: Foundation -->
@@ -88,9 +90,9 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="phase-info">
-                                <h3>Phase 1: Foundation</h3>
-                                <span class="phase-status completed">Completed</span>
-                                <span class="phase-date">Q1 2025</span>
+                                <h3 data-i18n="roadmap.phase1.title">Phase 1: Foundation</h3>
+                                <span class="phase-status completed" data-i18n="roadmap.phase1.status">Completed</span>
+                                <span class="phase-date" data-i18n="roadmap.phase1.date">Q1 2025</span>
                             </div>
                             <div class="phase-progress">
                                 <div class="progress-circle completed">100%</div>
@@ -100,19 +102,19 @@
                         <div class="milestone-list">
                             <div class="milestone completed">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Core smart contract development</span>
+                                <span data-i18n="roadmap.phase1.milestone1">Core smart contract development</span>
                             </div>
                             <div class="milestone completed">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Security audit by Certik</span>
+                                <span data-i18n="roadmap.phase1.milestone2">Security audit by Certik</span>
                             </div>
                             <div class="milestone completed">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Basic DEX functionality</span>
+                                <span data-i18n="roadmap.phase1.milestone3">Basic DEX functionality</span>
                             </div>
                             <div class="milestone completed">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Team formation & funding</span>
+                                <span data-i18n="roadmap.phase1.milestone4">Team formation & funding</span>
                             </div>
                         </div>
                     </div>
@@ -126,9 +128,9 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="phase-info">
-                                <h3>Phase 2: MVP Launch</h3>
-                                <span class="phase-status active">In Progress</span>
-                                <span class="phase-date">Q3 2025</span>
+                                <h3 data-i18n="roadmap.phase2.title">Phase 2: MVP Launch</h3>
+                                <span class="phase-status active" data-i18n="roadmap.phase2.status">In Progress</span>
+                                <span class="phase-date" data-i18n="roadmap.phase2.date">Q3 2025</span>
                             </div>
                             <div class="phase-progress">
                                 <div class="progress-circle active">80%</div>
@@ -138,19 +140,19 @@
                         <div class="milestone-list">
                             <div class="milestone completed">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Intent input → Aggregated routing execution</span>
+                                <span data-i18n="roadmap.phase2.milestone1">Intent input → Aggregated routing execution</span>
                             </div>
                             <div class="milestone completed">
                                 <i class="fas fa-check-circle"></i>
-                                <span>AI trending strategy recommendations</span>
+                                <span data-i18n="roadmap.phase2.milestone2">AI trending strategy recommendations</span>
                             </div>
                             <div class="milestone active">
                                 <i class="fas fa-clock"></i>
-                                <span>Mainstream DEX aggregator integration</span>
+                                <span data-i18n="roadmap.phase2.milestone3">Mainstream DEX aggregator integration</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Multi-chain support: EVM, Solana, zkSync</span>
+                                <span data-i18n="roadmap.phase2.milestone4">Multi-chain support: EVM, Solana, zkSync</span>
                             </div>
                         </div>
                     </div>
@@ -164,9 +166,9 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="phase-info">
-                                <h3>Phase 3: CopyTrade & Governance</h3>
-                                <span class="phase-status upcoming">Upcoming</span>
-                                <span class="phase-date">Q4 2025</span>
+                                <h3 data-i18n="roadmap.phase3.title">Phase 3: CopyTrade & Governance</h3>
+                                <span class="phase-status upcoming" data-i18n="roadmap.phase3.status">Upcoming</span>
+                                <span class="phase-date" data-i18n="roadmap.phase3.date">Q4 2025</span>
                             </div>
                             <div class="phase-progress">
                                 <div class="progress-circle upcoming">25%</div>
@@ -176,19 +178,19 @@
                         <div class="milestone-list">
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>CopyTrade module launch</span>
+                                <span data-i18n="roadmap.phase3.milestone1">CopyTrade module launch</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Follow addresses/strategists/portfolios</span>
+                                <span data-i18n="roadmap.phase3.milestone2">Follow addresses/strategists/portfolios</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Bull Points incentive system launch</span>
+                                <span data-i18n="roadmap.phase3.milestone3">Bull Points incentive system launch</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>DAO governance ranking & rewards</span>
+                                <span data-i18n="roadmap.phase3.milestone4">DAO governance ranking & rewards</span>
                             </div>
                         </div>
                     </div>
@@ -202,9 +204,9 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="phase-info">
-                                <h3>Phase 4: Strategy Marketplace</h3>
-                                <span class="phase-status future">Future</span>
-                                <span class="phase-date">Q1 2026</span>
+                                <h3 data-i18n="roadmap.phase4.title">Phase 4: Strategy Marketplace</h3>
+                                <span class="phase-status future" data-i18n="roadmap.phase4.status">Future</span>
+                                <span class="phase-date" data-i18n="roadmap.phase4.date">Q1 2026</span>
                             </div>
                             <div class="phase-progress">
                                 <div class="progress-circle future">0%</div>
@@ -214,19 +216,19 @@
                         <div class="milestone-list">
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Community AI strategy submissions</span>
+                                <span data-i18n="roadmap.phase4.milestone1">Community AI strategy submissions</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Custom parameter combination templates</span>
+                                <span data-i18n="roadmap.phase4.milestone2">Custom parameter combination templates</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Solver execution network launch</span>
+                                <span data-i18n="roadmap.phase4.milestone3">Solver execution network launch</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Node bidding Slot model activation</span>
+                                <span data-i18n="roadmap.phase4.milestone4">Node bidding Slot model activation</span>
                             </div>
                         </div>
                     </div>
@@ -240,9 +242,9 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="phase-info">
-                                <h3>Phase 5: Advanced Trading & Global Expansion</h3>
-                                <span class="phase-status future">Future</span>
-                                <span class="phase-date">Q2-Q3 2026</span>
+                                <h3 data-i18n="roadmap.phase5.title">Phase 5: Advanced Trading & Global Expansion</h3>
+                                <span class="phase-status future" data-i18n="roadmap.phase5.status">Future</span>
+                                <span class="phase-date" data-i18n="roadmap.phase5.date">Q2-Q3 2026</span>
                             </div>
                             <div class="phase-progress">
                                 <div class="progress-circle future">0%</div>
@@ -252,19 +254,19 @@
                         <div class="milestone-list">
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>On-chain US stock trading module beta</span>
+                                <span data-i18n="roadmap.phase5.milestone1">On-chain US stock trading module beta</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Tokenized stock trading with KYC compliance</span>
+                                <span data-i18n="roadmap.phase5.milestone2">Tokenized stock trading with KYC compliance</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Self-developed AI model deployment</span>
+                                <span data-i18n="roadmap.phase5.milestone3">Self-developed AI model deployment</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Multi-language support (CN/EN/JP/KR)</span>
+                                <span data-i18n="roadmap.phase5.milestone4">Multi-language support (CN/EN/JP/KR)</span>
                             </div>
                         </div>
                     </div>
@@ -278,9 +280,9 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div class="phase-info">
-                                <h3>Phase 6: Hardware Ecosystem</h3>
-                                <span class="phase-status future">Future</span>
-                                <span class="phase-date">Q2 2026 Ongoing</span>
+                                <h3 data-i18n="roadmap.phase6.title">Phase 6: Hardware Ecosystem</h3>
+                                <span class="phase-status future" data-i18n="roadmap.phase6.status">Future</span>
+                                <span class="phase-date" data-i18n="roadmap.phase6.date">Q2 2026 Ongoing</span>
                             </div>
                             <div class="phase-progress">
                                 <div class="progress-circle future">0%</div>
@@ -290,19 +292,19 @@
                         <div class="milestone-list">
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Taurus Phone official release</span>
+                                <span data-i18n="roadmap.phase6.milestone1">Taurus Phone official release</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Pre-installed Wallet/Strategy/CopyTrade modules</span>
+                                <span data-i18n="roadmap.phase6.milestone2">Pre-installed Wallet/Strategy/CopyTrade modules</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Mobile task system integration</span>
+                                <span data-i18n="roadmap.phase6.milestone3">Mobile task system integration</span>
                             </div>
                             <div class="milestone pending">
                                 <i class="fas fa-circle"></i>
-                                <span>Hardware × Strategy × Governance ecosystem</span>
+                                <span data-i18n="roadmap.phase6.milestone4">Hardware × Strategy × Governance ecosystem</span>
                             </div>
                         </div>
                     </div>
@@ -318,15 +320,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2>Be Part of Our Journey</h2>
-                    <p>Join our community and stay updated on our progress. Get early access to new features and help shape the future of decentralized trading.</p>
+                    <h2 data-i18n="roadmap.cta.title">Be Part of Our Journey</h2>
+                    <p data-i18n="roadmap.cta.description">Join our community and stay updated on our progress. Get early access to new features and help shape the future of decentralized trading.</p>
                     
                     <div class="cta-buttons">
                         <a href="goldtaurus.html" class="btn btn-primary btn-lg">
-                            <i class="fas fa-star"></i> Join GoldTaurus
+                            <i class="fas fa-star"></i> <span data-i18n="roadmap.cta.join">Join GoldTaurus</span>
                         </a>
                         <a href="whitepaper.html" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-file-alt"></i> Read Whitepaper
+                            <i class="fas fa-file-alt"></i> <span data-i18n="roadmap.cta.read">Read Whitepaper</span>
                         </a>
                     </div>
                 </div>
@@ -343,7 +345,7 @@
                         <img src="assets/images/taurus_dex_logo.webp" alt="Taurus DEX" class="logo">
                         <span>Taurus DEX</span>
                     </div>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="footer.description">
                         The next generation of decentralized trading, powered by blockchain technology and inspired by the cosmos.
                     </p>
                 </div>
@@ -367,7 +369,7 @@
                         </a>
                     </div>
                     <div class="footer-copyright">
-                        <p>&copy; 2024 Taurus DEX. All rights reserved.</p>
+                        <p data-i18n="footer.copyright">&copy; 2024 Taurus DEX. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -378,6 +380,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Web3.js -->
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <!-- I18N JS -->
+    <script src="assets/js/i18n.js"></script>
     <!-- Custom JavaScript -->
     <script src="assets/js/roadmap.js"></script>
 </body>

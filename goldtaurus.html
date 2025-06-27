@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GoldTaurus Matrix System - Taurus DEX</title>
+    <meta name="title-key" content="goldtaurus.hero.title">
     <link rel="icon" type="image/webp" href="assets/images/taurus_dex_logo.webp">
     
     <!-- Bootstrap CSS -->
@@ -12,6 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="assets/css/goldtaurus.css" rel="stylesheet">
+    <link href="assets/css/i18n.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -29,24 +31,24 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="features.html">Features</a>
+                        <a class="nav-link" href="features.html" data-i18n="nav.features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="goldtaurus.html">GoldTaurus</a>
+                        <a class="nav-link active" href="goldtaurus.html" data-i18n="nav.goldtaurus">GoldTaurus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="roadmap.html">Roadmap</a>
+                        <a class="nav-link" href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="whitepaper.html">Whitepaper</a>
+                        <a class="nav-link" href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a>
                     </li>
                 </ul>
                 
                 <button class="btn btn-wallet" onclick="connectWallet()">
-                    <i class="fas fa-wallet"></i> Connect Wallet
+                    <i class="fas fa-wallet"></i> <span data-i18n="nav.connect_wallet">Connect Wallet</span>
                 </button>
             </div>
         </div>
@@ -58,9 +60,9 @@
             <div class="row">
                 <div class="col-lg-10 mx-auto text-center">
                     <h1 class="hero-title">
-                        <span class="gradient-text">GoldTaurus Matrix System</span>
+                        <span class="gradient-text" data-i18n="goldtaurus.hero.title">GoldTaurus Matrix System</span>
                     </h1>
-                    <p class="hero-description">
+                    <p class="hero-description" data-i18n="goldtaurus.hero.description">
                         Revolutionary 9-level matrix delivering consistent returns through network effects. 
                         Experience infinite upward spillover with our proven reward distribution mechanism.
                     </p>
@@ -74,7 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2 class="section-title text-center mb-5">Interactive Matrix Network</h2>
+                    <h2 class="section-title text-center mb-5" data-i18n="goldtaurus.matrix.title">Interactive Matrix Network</h2>
                     
                     <div class="matrix-visualization">
                         <div class="matrix-grid">
@@ -103,8 +105,8 @@
                     
                     <!-- Matrix Info Panel -->
                     <div class="matrix-info" id="matrixInfo">
-                        <h4>Click on any level to see details</h4>
-                        <p>The GoldTaurus matrix system creates infinite upward spillover opportunities. Every 3 referrals trigger rewards, with the 3rd user automatically moving up to benefit higher levels.</p>
+                        <h4 data-i18n="goldtaurus.matrix.info">Click on any level to see details</h4>
+                        <p data-i18n="goldtaurus.matrix.description">The GoldTaurus matrix system creates infinite upward spillover opportunities. Every 3 referrals trigger rewards, with the 3rd user automatically moving up to benefit higher levels.</p>
                     </div>
                 </div>
             </div>
@@ -114,15 +116,15 @@
     <!-- Level Cards Section -->
     <section class="levels-section">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Investment Levels</h2>
+            <h2 class="section-title text-center mb-5" data-i18n="goldtaurus.levels.title">Investment Levels</h2>
             
             <div class="row g-4">
                 <!-- T1-T3 Group -->
                 <div class="col-lg-4 col-md-6">
                     <div class="level-group-card">
                         <div class="group-header">
-                            <h3>Starter Levels</h3>
-                            <span class="group-badge">T1 - T3</span>
+                            <h3 data-i18n="goldtaurus.starter.title">Starter Levels</h3>
+                            <span class="group-badge" data-i18n="goldtaurus.starter.group">T1 - T3</span>
                         </div>
                         
                         <div class="level-items">
@@ -131,7 +133,7 @@
                                     <span class="level-name">T1</span>
                                     <span class="level-amount">0.1 BNB</span>
                                 </div>
-                                <div class="level-desc">Entry Level - Build Foundation</div>
+                                <div class="level-desc" data-i18n="levels.descriptions.t1">Entry Level - Build Foundation</div>
                             </div>
                             
                             <div class="level-item">
@@ -139,7 +141,7 @@
                                     <span class="level-name">T2</span>
                                     <span class="level-amount">0.2 BNB</span>
                                 </div>
-                                <div class="level-desc">Growth Level - Expand Network</div>
+                                <div class="level-desc" data-i18n="levels.descriptions.t2">Growth Level - Expand Network</div>
                             </div>
                             
                             <div class="level-item">
@@ -147,12 +149,12 @@
                                     <span class="level-name">T3</span>
                                     <span class="level-amount">0.4 BNB</span>
                                 </div>
-                                <div class="level-desc">Builder Level - Scale Up</div>
+                                <div class="level-desc" data-i18n="levels.descriptions.t3">Builder Level - Scale Up</div>
                             </div>
                         </div>
                         
                         <button class="btn btn-select-group" onclick="selectLevelGroup('starter')">
-                            <i class="fas fa-rocket"></i> Start Here
+                            <i class="fas fa-rocket"></i> <span data-i18n="goldtaurus.starter.btn">Start Here</span>
                         </button>
                     </div>
                 </div>
@@ -161,9 +163,9 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="level-group-card featured">
                         <div class="group-header">
-                            <h3>Growth Levels</h3>
-                            <span class="group-badge">T4 - T6</span>
-                            <div class="popular-badge">Most Popular</div>
+                            <h3 data-i18n="goldtaurus.growth.title">Growth Levels</h3>
+                            <span class="group-badge" data-i18n="goldtaurus.growth.group">T4 - T6</span>
+                            <div class="popular-badge" data-i18n="levels.badges.popular">Most Popular</div>
                         </div>
                         
                         <div class="level-items">
@@ -172,7 +174,7 @@
                                     <span class="level-name">T4</span>
                                     <span class="level-amount">0.8 BNB</span>
                                 </div>
-                                <div class="level-desc">Leader Level - Team Building</div>
+                                <div class="level-desc" data-i18n="levels.descriptions.t4">Leader Level - Team Building</div>
                             </div>
                             
                             <div class="level-item">
@@ -180,7 +182,7 @@
                                     <span class="level-name">T5</span>
                                     <span class="level-amount">1.6 BNB</span>
                                 </div>
-                                <div class="level-desc">Elite Level - Premium Rewards</div>
+                                <div class="level-desc" data-i18n="levels.descriptions.t5">Elite Level - Premium Rewards</div>
                             </div>
                             
                             <div class="level-item">
@@ -188,12 +190,12 @@
                                     <span class="level-name">T6</span>
                                     <span class="level-amount">3.2 BNB</span>
                                 </div>
-                                <div class="level-desc">Master Level - High Yield</div>
+                                <div class="level-desc" data-i18n="levels.descriptions.t6">Master Level - High Yield</div>
                             </div>
                         </div>
                         
                         <button class="btn btn-select-group" onclick="selectLevelGroup('growth')">
-                            <i class="fas fa-star"></i> Recommended
+                            <i class="fas fa-star"></i> <span data-i18n="goldtaurus.growth.btn">Recommended</span>
                         </button>
                     </div>
                 </div>
@@ -202,9 +204,9 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="level-group-card premium">
                         <div class="group-header">
-                            <h3>Elite Levels</h3>
-                            <span class="group-badge">T7 - T9</span>
-                            <div class="vip-badge">VIP</div>
+                            <h3 data-i18n="goldtaurus.premium.title">Elite Levels</h3>
+                            <span class="group-badge" data-i18n="goldtaurus.premium.group">T7 - T9</span>
+                            <div class="vip-badge" data-i18n="levels.badges.vip">VIP</div>
                         </div>
                         
                         <div class="level-items">
@@ -213,7 +215,7 @@
                                     <span class="level-name">T7</span>
                                     <span class="level-amount">6.4 BNB</span>
                                 </div>
-                                <div class="level-desc">Champion Level - Max Multiplier</div>
+                                <div class="level-desc" data-i18n="levels.descriptions.t7">Champion Level - Max Multiplier</div>
                             </div>
                             
                             <div class="level-item">
@@ -221,7 +223,7 @@
                                     <span class="level-name">T8</span>
                                     <span class="level-amount">12.8 BNB</span>
                                 </div>
-                                <div class="level-desc">Legend Level - Ultimate Returns</div>
+                                <div class="level-desc" data-i18n="levels.descriptions.t8">Legend Level - Ultimate Returns</div>
                             </div>
                             
                             <div class="level-item">
@@ -229,12 +231,12 @@
                                     <span class="level-name">T9</span>
                                     <span class="level-amount">25.6 BNB</span>
                                 </div>
-                                <div class="level-desc">Immortal Level - Infinite Potential</div>
+                                <div class="level-desc" data-i18n="levels.descriptions.t9">Immortal Level - Infinite Potential</div>
                             </div>
                         </div>
                         
                         <button class="btn btn-select-group" onclick="selectLevelGroup('elite')">
-                            <i class="fas fa-crown"></i> Go Premium
+                            <i class="fas fa-crown"></i> <span data-i18n="goldtaurus.premium.btn">Go Premium</span>
                         </button>
                     </div>
                 </div>
@@ -247,7 +249,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="section-title text-center mb-5">Advanced ROI Calculator</h2>
+                    <h2 class="section-title text-center mb-5" data-i18n="goldtaurus.calculator.title">Advanced ROI Calculator</h2>
                     
                     <div class="calculator-card">
                         <div class="row">
@@ -256,18 +258,18 @@
                                     <!-- Investment Level Selection - Full Width Row -->
                                     <div class="row mb-4">
                                         <div class="col-12">
-                                            <label for="investmentLevel" class="form-label">Select Investment Level</label>
+                                            <label for="investmentLevel" class="form-label" data-i18n="goldtaurus.calculator.select_level">Select Investment Level</label>
                                                                         <select class="form-select" id="investmentLevel">
-                                <option value="">Choose Your Level</option>
-                                <option value="T1">T1 - 0.1 BNB (Entry)</option>
-                                <option value="T2">T2 - 0.2 BNB (Growth)</option>
-                                <option value="T3">T3 - 0.4 BNB (Builder)</option>
-                                <option value="T4">T4 - 0.8 BNB (Leader)</option>
-                                <option value="T5">T5 - 1.6 BNB (Elite)</option>
-                                <option value="T6">T6 - 3.2 BNB (Master)</option>
-                                <option value="T7">T7 - 6.4 BNB (Champion)</option>
-                                <option value="T8">T8 - 12.8 BNB (Legend)</option>
-                                <option value="T9">T9 - 25.6 BNB (Immortal)</option>
+                                <option value="" data-i18n="calculator.levels.choose">Choose Your Level</option>
+                                <option value="T1" data-i18n="calculator.levels.t1">T1 - 0.1 BNB (Entry)</option>
+                                <option value="T2" data-i18n="calculator.levels.t2">T2 - 0.2 BNB (Growth)</option>
+                                <option value="T3" data-i18n="calculator.levels.t3">T3 - 0.4 BNB (Builder)</option>
+                                <option value="T4" data-i18n="calculator.levels.t4">T4 - 0.8 BNB (Leader)</option>
+                                <option value="T5" data-i18n="calculator.levels.t5">T5 - 1.6 BNB (Elite)</option>
+                                <option value="T6" data-i18n="calculator.levels.t6">T6 - 3.2 BNB (Master)</option>
+                                <option value="T7" data-i18n="calculator.levels.t7">T7 - 6.4 BNB (Champion)</option>
+                                <option value="T8" data-i18n="calculator.levels.t8">T8 - 12.8 BNB (Legend)</option>
+                                <option value="T9" data-i18n="calculator.levels.t9">T9 - 25.6 BNB (Immortal)</option>
                             </select>
                                         </div>
                                     </div>
@@ -275,7 +277,7 @@
                                     <!-- Token Multiplier - Full Width Row -->
                                     <div class="row mb-4">
                                         <div class="col-12">
-                                            <label for="tokenMultiplier" class="form-label">Token Price Multiplier</label>
+                                            <label for="tokenMultiplier" class="form-label" data-i18n="calculator.multiplier">Token Price Multiplier</label>
                                             <div class="multiplier-container">
                                                 <input type="range" class="form-range" id="tokenMultiplier" 
                                                        min="1" max="1000" value="1" step="1">
@@ -299,7 +301,7 @@
                                     <div class="row mb-4">
                                         <div class="col-12">
                                             <button class="btn btn-calculate w-100" onclick="calculateReturns()">
-                                                <i class="fas fa-calculator"></i> Calculate Returns
+                                                <i class="fas fa-calculator"></i> <span data-i18n="calculator.calculate_returns">Calculate Returns</span>
                                             </button>
                                         </div>
                                     </div>
@@ -313,8 +315,8 @@
                                 <div class="calculator-result" id="calculatorResult">
                                     <div class="result-placeholder">
                                         <i class="fas fa-chart-pie"></i>
-                                        <h4>Calculate Your Potential</h4>
-                                        <p>Select your investment level and token multiplier to see projected returns</p>
+                                        <h4 data-i18n="calculator.potential.title">Calculate Your Potential</h4>
+                                        <p data-i18n="calculator.potential.description">Select your investment level and token multiplier to see projected returns</p>
                                     </div>
                                 </div>
                             </div>
@@ -328,7 +330,7 @@
     <!-- Reward Mechanism Section -->
     <section class="rewards-section">
         <div class="container">
-            <h2 class="section-title text-center mb-5">Reward Distribution Mechanism</h2>
+            <h2 class="section-title text-center mb-5" data-i18n="rewards.title">Reward Distribution Mechanism</h2>
             
             <div class="row g-4">
                 <div class="col-lg-6">
@@ -336,16 +338,16 @@
                         <div class="reward-icon">
                             <i class="fas fa-coins"></i>
                         </div>
-                        <h3>50% Total Rewards</h3>
-                        <p class="reward-desc">Every completed cycle distributes 50% of the total collected amount as rewards</p>
+                        <h3 data-i18n="rewards.total_rewards.title">50% Total Rewards</h3>
+                        <p class="reward-desc" data-i18n="rewards.total_rewards.description">Every completed cycle distributes 50% of the total collected amount as rewards</p>
                         
                         <div class="reward-breakdown">
                             <div class="breakdown-item">
-                                <span class="breakdown-label">BNB Rewards</span>
+                                <span class="breakdown-label" data-i18n="rewards.total_rewards.bnb_rewards">BNB Rewards</span>
                                 <span class="breakdown-value">25%</span>
                             </div>
                             <div class="breakdown-item">
-                                <span class="breakdown-label">Tauru Tokens</span>
+                                <span class="breakdown-label" data-i18n="rewards.total_rewards.tauru_tokens">Tauru Tokens</span>
                                 <span class="breakdown-value">25%</span>
                             </div>
                         </div>
@@ -357,21 +359,21 @@
                         <div class="reward-icon">
                             <i class="fas fa-sync-alt"></i>
                         </div>
-                        <h3>Infinite Spillover</h3>
-                        <p class="reward-desc">3rd referral automatically moves to the next available position, creating infinite upward spillover</p>
+                        <h3 data-i18n="rewards.spillover.title">Infinite Spillover</h3>
+                        <p class="reward-desc" data-i18n="rewards.spillover.description">3rd referral automatically moves to the next available position, creating infinite upward spillover</p>
                         
                         <div class="spillover-demo">
                             <div class="spillover-step">
                                 <span class="step-number">1</span>
-                                <span class="step-text">First 2 referrals fill your matrix</span>
+                                <span class="step-text" data-i18n="rewards.spillover.step1">First 2 referrals fill your matrix</span>
                             </div>
                             <div class="spillover-step">
                                 <span class="step-number">2</span>
-                                <span class="step-text">3rd referral triggers reward cycle</span>
+                                <span class="step-text" data-i18n="rewards.spillover.step2">3rd referral triggers reward cycle</span>
                             </div>
                             <div class="spillover-step">
                                 <span class="step-number">3</span>
-                                <span class="step-text">User moves up to benefit higher levels</span>
+                                <span class="step-text" data-i18n="rewards.spillover.step3">User moves up to benefit higher levels</span>
                             </div>
                         </div>
                     </div>
@@ -385,15 +387,15 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2>Ready to Join the Matrix?</h2>
-                    <p>Start earning consistent returns through our proven matrix system. Choose your level and begin your journey to financial freedom.</p>
+                    <h2 data-i18n="cta.goldtaurus.title">Ready to Join the Matrix?</h2>
+                    <p data-i18n="cta.goldtaurus.description">Start earning consistent returns through our proven matrix system. Choose your level and begin your journey to financial freedom.</p>
                     
                     <div class="cta-buttons">
                         <button class="btn btn-primary btn-lg" onclick="connectWallet()">
-                            <i class="fas fa-wallet"></i> Connect & Start
+                            <i class="fas fa-wallet"></i> <span data-i18n="cta.goldtaurus.connect_start">Connect & Start</span>
                         </button>
                         <a href="whitepaper.html" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-file-alt"></i> Learn More
+                            <i class="fas fa-file-alt"></i> <span data-i18n="cta.goldtaurus.learn_more">Learn More</span>
                         </a>
                     </div>
                 </div>
@@ -410,7 +412,7 @@
                         <img src="assets/images/taurus_dex_logo.webp" alt="Taurus DEX" class="logo">
                         <span>Taurus DEX</span>
                     </div>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="footer.description">
                         The next generation of decentralized trading, powered by blockchain technology and inspired by the cosmos.
                     </p>
                 </div>
@@ -434,7 +436,7 @@
                         </a>
                     </div>
                     <div class="footer-copyright">
-                        <p>&copy; 2024 Taurus DEX. All rights reserved.</p>
+                        <p data-i18n="footer.copyright">&copy; 2024 Taurus DEX. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -447,6 +449,8 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- I18N JS -->
+    <script src="assets/js/i18n.js"></script>
     <!-- Custom JavaScript -->
     <script src="assets/js/goldtaurus.js"></script>
 </body>

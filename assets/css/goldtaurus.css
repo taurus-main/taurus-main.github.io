@@ -535,7 +535,7 @@ body {
 
 .calculator-inputs .row {
     margin-bottom: 20px;
-}
+    }
 
 .calculator-inputs .row:last-child {
     margin-bottom: 0;
@@ -999,7 +999,7 @@ body {
         padding: 35px;
         max-width: 700px;
     }
-    
+
     .matrix-grid {
         gap: 35px;
         max-width: 580px;

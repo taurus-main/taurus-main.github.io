@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I18N Demo - Taurus DEX</title>
+    <meta name="title-key" content="hero.title">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/i18n.css" rel="stylesheet">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+            color: #fff;
+            min-height: 100vh;
+            padding: 2rem 0;
+        }
+        
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .demo-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .test-text {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+        
+        .language-info {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-globe"></i>
+                <span>I18N Demo</span>
+            </a>
+            
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text me-3">
+                    <i class="fas fa-language"></i>
+                    <span data-i18n="nav.home">Home</span> | 
+                    <span data-i18n="nav.features">Features</span> | 
+                    <span data-i18n="nav.goldtaurus">GoldTaurus</span>
+                </span>
+                <button class="btn btn-wallet">
+                    <i class="fas fa-wallet"></i> <span data-i18n="nav.connect_wallet">Connect Wallet</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="demo-container">
+            <h1 class="text-center mb-4">
+                <i class="fas fa-globe-americas"></i> 国际化功能演示
+            </h1>
+            
+            <div class="language-info">
+                <h5><i class="fas fa-info-circle"></i> 说明</h5>
+                <p>这个页面演示了Taurus DEX网站的国际化功能。语言选择器应该出现在右上角导航栏中。</p>
+                <p>支持的语言：英文、简体中文、繁体中文、韩文</p>
+                <p>当前语言：<span id="currentLang">-</span></p>
+            </div>
+            
+            <!-- Hero Section Demo -->
+            <div class="demo-section">
+                <h3><i class="fas fa-home"></i> 主页内容</h3>
+                <div class="test-text">
+                    <strong data-i18n="hero.title">TAURUS DEX</strong>
+                </div>
+                <div class="test-text">
+                    <em data-i18n="hero.subtitle">AI-Powered Trading Revolution</em>
+                </div>
+                <div class="test-text" data-i18n="hero.description">
+                    Experience the future of decentralized trading with our AI-driven intent engine, cross-chain aggregation, and revolutionary GoldTaurus matrix system.
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-primary me-2">
+                        <i class="fas fa-star"></i> <span data-i18n="hero.btn_explore">Explore GoldTaurus</span>
+                    </button>
+                    <button class="btn btn-outline-light">
+                        <i class="fas fa-rocket"></i> <span data-i18n="hero.btn_learn">Learn More</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Features Demo -->
+            <div class="demo-section">
+                <h3><i class="fas fa-cogs"></i> 功能页面内容</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 data-i18n="features.ai.title">AI Intent Engine</h5>
+                        <p data-i18n="features.ai.description">Advanced machine learning algorithms analyze market conditions, predict price movements, and execute optimal trading strategies automatically.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 data-i18n="features.crosschain.title">Cross-Chain Aggregation</h5>
+                        <p data-i18n="features.crosschain.description">Seamlessly trade across multiple blockchains with our unified liquidity aggregation protocol.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GoldTaurus Demo -->
+            <div class="demo-section">
+                <h3><i class="fas fa-star"></i> 金牛系统内容</h3>
+                <div class="test-text">
+                    <strong data-i18n="goldtaurus.hero.title">GoldTaurus Matrix System</strong>
+                </div>
+                <div class="test-text" data-i18n="goldtaurus.hero.description">
+                    Revolutionary 9-level matrix delivering consistent returns through network effects.
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="text-center p-2 border rounded">
+                            <h6 data-i18n="goldtaurus.starter.title">Starter Levels</h6>
+                            <span class="badge bg-primary" data-i18n="goldtaurus.starter.group">T1 - T3</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center p-2 border rounded">
+                            <h6 data-i18n="goldtaurus.growth.title">Growth Levels</h6>
+                            <span class="badge bg-warning" data-i18n="goldtaurus.growth.group">T4 - T6</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="text-center p-2 border rounded">
+                            <h6 data-i18n="goldtaurus.premium.title">Premium Levels</h6>
+                            <span class="badge bg-success" data-i18n="goldtaurus.premium.group">T7 - T9</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Common Terms Demo -->
+            <div class="demo-section">
+                <h3><i class="fas fa-tags"></i> 通用术语</h3>
+                <div class="row">
+                    <div class="col-md-3">
+                        <span class="badge bg-success" data-i18n="common.online">Online</span>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="badge bg-warning" data-i18n="common.coming_soon">Coming Soon</span>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="badge bg-info" data-i18n="common.loading">Loading...</span>
+                    </div>
+                    <div class="col-md-3">
+                        <span class="badge bg-primary" data-i18n="common.success">Success</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Test Controls -->
+            <div class="demo-section">
+                <h3><i class="fas fa-tools"></i> 测试控制</h3>
+                <div class="d-flex gap-2 flex-wrap">
+                    <button class="btn btn-outline-primary" onclick="testLanguage('en')">
+                        <i class="fas fa-flag-usa"></i> English
+                    </button>
+                    <button class="btn btn-outline-danger" onclick="testLanguage('zh-cn')">
+                        <i class="fas fa-flag"></i> 简体中文
+                    </button>
+                    <button class="btn btn-outline-warning" onclick="testLanguage('zh-tw')">
+                        <i class="fas fa-flag"></i> 繁體中文
+                    </button>
+                    <button class="btn btn-outline-success" onclick="testLanguage('ko')">
+                        <i class="fas fa-flag"></i> 한국어
+                    </button>
+                </div>
+                <div class="mt-3">
+                    <button class="btn btn-info" onclick="showCurrentLanguage()">
+                        <i class="fas fa-info"></i> 显示当前语言
+                    </button>
+                    <button class="btn btn-secondary" onclick="location.reload()">
+                        <i class="fas fa-refresh"></i> 刷新页面
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- I18N JS -->
+    <script src="assets/js/i18n.js"></script>
+    
+    <script>
+        // 测试函数
+        function testLanguage(lang) {
+            if (window.I18N) {
+                window.I18N.setLanguage(lang);
+                showCurrentLanguage();
+            } else {
+                alert('I18N system not loaded!');
+            }
+        }
+        
+        function showCurrentLanguage() {
+            if (window.I18N) {
+                const current = window.I18N.getCurrentLanguage();
+                const name = window.I18N.supportedLanguages[current];
+                document.getElementById('currentLang').textContent = `${current} (${name})`;
+                alert(`当前语言: ${current} (${name})`);
+            }
+        }
+        
+        // 页面加载完成后显示当前语言
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                showCurrentLanguage();
+            }, 500);
+        });
+    </script>
+</body>
+</html> 

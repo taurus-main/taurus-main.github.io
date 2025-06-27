@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Features - Taurus DEX</title>
+    <meta name="title-key" content="features.hero.title">
     <link rel="icon" type="image/webp" href="assets/images/taurus_dex_logo.webp">
     
     <!-- Bootstrap CSS -->
@@ -12,6 +13,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="assets/css/features.css" rel="stylesheet">
+    <link href="assets/css/i18n.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -29,24 +31,24 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="features.html">Features</a>
+                        <a class="nav-link active" href="features.html" data-i18n="nav.features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="goldtaurus.html">GoldTaurus</a>
+                        <a class="nav-link" href="goldtaurus.html" data-i18n="nav.goldtaurus">GoldTaurus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="roadmap.html">Roadmap</a>
+                        <a class="nav-link" href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="whitepaper.html">Whitepaper</a>
+                        <a class="nav-link" href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a>
                     </li>
                 </ul>
                 
                 <button class="btn btn-wallet" onclick="connectWallet()">
-                    <i class="fas fa-wallet"></i> Connect Wallet
+                    <i class="fas fa-wallet"></i> <span data-i18n="nav.connect_wallet">Connect Wallet</span>
                 </button>
             </div>
         </div>
@@ -62,9 +64,9 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h1 class="hero-title">
-                        <span class="gradient-text">Revolutionary Features</span>
+                        <span class="gradient-text" data-i18n="features.hero.title">Revolutionary Features</span>
                     </h1>
-                    <p class="hero-description">
+                    <p class="hero-description" data-i18n="features.hero.description">
                         Discover the cutting-edge technology that powers our AI-driven DeFi ecosystem. 
                         From intelligent trading algorithms to seamless cross-chain operations.
                     </p>
@@ -83,21 +85,21 @@
                         <div class="feature-icon">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3>AI Intent Engine</h3>
-                        <p>Advanced machine learning algorithms analyze market conditions, predict price movements, and execute optimal trading strategies automatically. Our AI processes millions of data points in real-time to maximize your returns.</p>
+                        <h3 data-i18n="features.ai.title">AI Intent Engine</h3>
+                        <p data-i18n="features.ai.description">Advanced machine learning algorithms analyze market conditions, predict price movements, and execute optimal trading strategies automatically. Our AI processes millions of data points in real-time to maximize your returns.</p>
                         
                         <div class="feature-stats">
                             <div class="stat-item">
                                 <div class="stat-number">97.3%</div>
-                                <div class="stat-label">Success Rate</div>
+                                <div class="stat-label" data-i18n="features.ai.success_rate">Success Rate</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-number">24/7</div>
-                                <div class="stat-label">Operation</div>
+                                <div class="stat-label" data-i18n="features.ai.operation">Operation</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-number">&lt;50ms</div>
-                                <div class="stat-label">Execution</div>
+                                <div class="stat-label" data-i18n="features.ai.execution">Execution</div>
                             </div>
                         </div>
                         
@@ -113,8 +115,8 @@
                         <div class="feature-icon">
                             <i class="fas fa-link"></i>
                         </div>
-                        <h3>Cross-Chain Aggregation</h3>
-                        <p>Seamlessly trade across multiple blockchains with our unified liquidity aggregation protocol. Access the best prices from Ethereum, BSC, Arbitrum, and more.</p>
+                        <h3 data-i18n="features.crosschain.title">Cross-Chain Aggregation</h3>
+                        <p data-i18n="features.crosschain.description">Seamlessly trade across multiple blockchains with our unified liquidity aggregation protocol. Access the best prices from Ethereum, BSC, Arbitrum, and more.</p>
                         
                         <div class="network-visualization">
                             <div class="network-node active" data-network="eth">ETH</div>
@@ -127,15 +129,15 @@
                         <div class="supported-chains">
                             <div class="chain-item">
                                 <span class="chain-name">Ethereum</span>
-                                <span class="chain-status online">Online</span>
+                                <span class="chain-status online" data-i18n="common.online">Online</span>
                             </div>
                             <div class="chain-item">
                                 <span class="chain-name">BSC</span>
-                                <span class="chain-status online">Online</span>
+                                <span class="chain-status online" data-i18n="common.online">Online</span>
                             </div>
                             <div class="chain-item">
                                 <span class="chain-name">Arbitrum</span>
-                                <span class="chain-status coming">Coming Soon</span>
+                                <span class="chain-status coming" data-i18n="common.coming_soon">Coming Soon</span>
                             </div>
                         </div>
                     </div>
@@ -147,11 +149,11 @@
                         <div class="feature-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
-                        <h3>CopyTrade System</h3>
-                        <p>Follow and automatically copy successful traders' strategies. Our social trading platform connects you with top performers and proven strategies.</p>
+                        <h3 data-i18n="features.copytrade.title">CopyTrade System</h3>
+                        <p data-i18n="features.copytrade.description">Follow and automatically copy successful traders' strategies. Our social trading platform connects you with top performers and proven strategies.</p>
                         
                         <div class="top-traders">
-                            <h5>Top Performers</h5>
+                            <h5 data-i18n="features.copytrade.top_performers">Top Performers</h5>
                             <div class="trader-list">
                                 <div class="trader-item">
                                     <div class="trader-info">
@@ -160,7 +162,7 @@
                                     </div>
                                     <div class="trader-stats">
                                         <span class="trader-profit">+347%</span>
-                                        <span class="trader-followers">2.1k followers</span>
+                                        <span class="trader-followers">2.1k <span data-i18n="features.copytrade.followers">followers</span></span>
                                     </div>
                                 </div>
                                 <div class="trader-item">
@@ -170,7 +172,7 @@
                                     </div>
                                     <div class="trader-stats">
                                         <span class="trader-profit">+289%</span>
-                                        <span class="trader-followers">1.8k followers</span>
+                                        <span class="trader-followers">1.8k <span data-i18n="features.copytrade.followers">followers</span></span>
                                     </div>
                                 </div>
                                 <div class="trader-item">
@@ -180,7 +182,7 @@
                                     </div>
                                     <div class="trader-stats">
                                         <span class="trader-profit">+234%</span>
-                                        <span class="trader-followers">1.5k followers</span>
+                                        <span class="trader-followers">1.5k <span data-i18n="features.copytrade.followers">followers</span></span>
                                     </div>
                                 </div>
                             </div>
@@ -194,36 +196,36 @@
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3>Smart Contract Security</h3>
-                        <p>Bank-grade security with multi-signature wallets, time-locked contracts, and comprehensive audit reports from leading security firms.</p>
+                        <h3 data-i18n="features.security.title">Smart Contract Security</h3>
+                        <p data-i18n="features.security.description">Bank-grade security with multi-signature wallets, time-locked contracts, and comprehensive audit reports from leading security firms.</p>
                         
                         <div class="security-features">
                             <div class="security-item">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Multi-Signature Protection</span>
+                                <span data-i18n="security_features.multi_sig">Multi-Signature Protection</span>
                             </div>
                             <div class="security-item">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Time-Locked Contracts</span>
+                                <span data-i18n="security_features.time_locked">Time-Locked Contracts</span>
                             </div>
                             <div class="security-item">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Audited by Certik & Hacken</span>
+                                <span data-i18n="security_features.audited">Audited by Certik & Hacken</span>
                             </div>
                             <div class="security-item">
                                 <i class="fas fa-check-circle"></i>
-                                <span>Insurance Coverage</span>
+                                <span data-i18n="security_features.insurance">Insurance Coverage</span>
                             </div>
                         </div>
                         
                         <div class="audit-badges">
                             <div class="audit-badge">
                                 <span class="badge-score">95/100</span>
-                                <span class="badge-name">Security Score</span>
+                                <span class="badge-name" data-i18n="security_features.security_score">Security Score</span>
                             </div>
                             <div class="audit-badge">
                                 <span class="badge-score">$10M</span>
-                                <span class="badge-name">Insurance Pool</span>
+                                <span class="badge-name" data-i18n="security_features.insurance_pool">Insurance Pool</span>
                             </div>
                         </div>
                     </div>
@@ -232,35 +234,35 @@
             
             <!-- Technology Comparison -->
             <div class="comparison-section">
-                <h2 class="text-center mb-5">Why Choose Taurus DEX?</h2>
+                <h2 class="text-center mb-5" data-i18n="comparison.title">Why Choose Taurus DEX?</h2>
                 <div class="comparison-table">
                     <div class="comparison-header">
-                        <div class="comparison-feature">Feature</div>
-                        <div class="comparison-taurus">Taurus DEX</div>
-                        <div class="comparison-others">Traditional DEX</div>
+                        <div class="comparison-feature" data-i18n="comparison.feature">Feature</div>
+                        <div class="comparison-taurus" data-i18n="comparison.taurus_dex">Taurus DEX</div>
+                        <div class="comparison-others" data-i18n="comparison.traditional_dex">Traditional DEX</div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">AI-Powered Trading</div>
+                        <div class="comparison-feature" data-i18n="comparison.ai_trading">AI-Powered Trading</div>
                         <div class="comparison-taurus"><i class="fas fa-check-circle"></i></div>
                         <div class="comparison-others"><i class="fas fa-times-circle"></i></div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">Cross-Chain Support</div>
+                        <div class="comparison-feature" data-i18n="comparison.cross_chain_support">Cross-Chain Support</div>
                         <div class="comparison-taurus"><i class="fas fa-check-circle"></i></div>
                         <div class="comparison-others"><i class="fas fa-minus-circle"></i></div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">Social Trading</div>
+                        <div class="comparison-feature" data-i18n="comparison.social_trading">Social Trading</div>
                         <div class="comparison-taurus"><i class="fas fa-check-circle"></i></div>
                         <div class="comparison-others"><i class="fas fa-times-circle"></i></div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">Matrix Rewards</div>
+                        <div class="comparison-feature" data-i18n="comparison.matrix_rewards">Matrix Rewards</div>
                         <div class="comparison-taurus"><i class="fas fa-check-circle"></i></div>
                         <div class="comparison-others"><i class="fas fa-times-circle"></i></div>
                     </div>
                     <div class="comparison-row">
-                        <div class="comparison-feature">Gas Optimization</div>
+                        <div class="comparison-feature" data-i18n="comparison.gas_optimization">Gas Optimization</div>
                         <div class="comparison-taurus"><i class="fas fa-check-circle"></i></div>
                         <div class="comparison-others"><i class="fas fa-minus-circle"></i></div>
                     </div>
@@ -274,14 +276,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
-                    <h2>Ready to Experience the Future?</h2>
-                    <p>Join thousands of traders who are already benefiting from our revolutionary platform.</p>
+                    <h2 data-i18n="cta.features.title">Ready to Experience the Future?</h2>
+                    <p data-i18n="cta.features.description">Join thousands of traders who are already benefiting from our revolutionary platform.</p>
                     <div class="cta-buttons">
                         <a href="goldtaurus.html" class="btn btn-primary btn-lg">
-                            <i class="fas fa-star"></i> Start Trading
+                            <i class="fas fa-star"></i> <span data-i18n="cta.features.start_trading">Start Trading</span>
                         </a>
                         <a href="whitepaper.html" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-file-alt"></i> Read Whitepaper
+                            <i class="fas fa-file-alt"></i> <span data-i18n="cta.features.read_whitepaper">Read Whitepaper</span>
                         </a>
                     </div>
                 </div>
@@ -298,7 +300,7 @@
                         <img src="assets/images/taurus_dex_logo.webp" alt="Taurus DEX" class="logo">
                         <span>Taurus DEX</span>
                     </div>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="footer.description">
                         The next generation of decentralized trading, powered by blockchain technology and inspired by the cosmos.
                     </p>
                 </div>
@@ -322,7 +324,7 @@
                         </a>
                     </div>
                     <div class="footer-copyright">
-                        <p>&copy; 2024 Taurus DEX. All rights reserved.</p>
+                        <p data-i18n="footer.copyright">&copy; 2024 Taurus DEX. All rights reserved.</p>
                     </div>
                 </div>
             </div>
@@ -335,6 +337,8 @@
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- I18N JS -->
+    <script src="assets/js/i18n.js"></script>
     <!-- Custom JavaScript -->
     <script src="assets/js/features.js"></script>
 </body>
